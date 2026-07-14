@@ -1,0 +1,21 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Environment Variables Config
+.env
+
+# CrewAI / LiteLLM Caches
+.crewai/
+.db/
+*.db
+sqlite.db
+db.sqlite3

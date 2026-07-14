@@ -1,0 +1,9 @@
+[project]
+name = "ai-study-buddy"
+version = "0.1.0"
+description = "A sequential multi-agent system to study topics using Ollama"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "crewai>=0.80.0",
+]
