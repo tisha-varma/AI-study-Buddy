@@ -1,6 +1,6 @@
 # 🎓 AI Study Buddy
 
-AI Study Buddy is a local, sequential multi-agent learning companion. It helps you study any custom topic by generating educational material, creating practice quizzes, and providing interactive tutoring feedback. 
+AI Study Buddy is a local, sequential, multi-agent learning companion. It helps you study any custom topic by generating educational material, creating practice quizzes, and providing interactive tutoring feedback. 
 
 The system runs entirely locally on your machine using **Ollama**, **Mistral**, and **CrewAI**.
 
@@ -35,12 +35,18 @@ The system utilizes exactly **3 specialized agents** executing in a strict seque
 [ Tutor Evaluation & Score ]
 ```
 
+
+
 ### Flow Details:
 1. **Topic Agent**: Simulates an expert teacher, generating clean and structured explanations of complex concepts for beginners.
 2. **Quiz Agent**: Receives the Topic Agent's explanation and constructs 3 multiple-choice questions (MCQs) with options, keeping correct answers hidden.
 3. **Feedback Agent**: Receives the original material, the questions, and the user's input answers. It grades the answers, provides explanations for each correct/incorrect option, and calculates a final score (e.g., `2/3`).
 
 ---
+
+
+https://github.com/user-attachments/assets/7dacf856-787b-46eb-9afe-eefcfac16614
+
 
 ## 🛠️ Tech Stack & Setup
 
