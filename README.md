@@ -10,15 +10,32 @@ The system runs entirely locally on your machine using **Ollama**, **Mistral**, 
 
 The system utilizes exactly **3 specialized agents** executing in a strict sequential chain:
 
-```mermaid
-graph TD
-    User([User Topic Input]) --> TopicAgent[Topic Agent: Educator]
-    TopicAgent -->|Generates Explanation| QuizAgent[Quiz Agent: Designer]
-    QuizAgent -->|Generates MCQs| UserAnswers([User Answers Input])
-    UserAnswers --> FeedbackAgent[Feedback Agent: Tutor]
-    FeedbackAgent -->|Grades & Explains| Result([Tutor Evaluation Report])
+```
+[ User Topic Input ]
+         │
+         ▼
+ ┌───────────────┐
+ │  Topic Agent  │ ──► Generates clear explanation
+ └───────────────┘
+         │
+         ▼
+ ┌───────────────┐
+ │  Quiz Agent   │ ──► Analyzes explanation & creates practice questions
+ └───────────────┘
+         │
+         ▼
+[ User Answers Input ]
+         │
+         ▼
+ ┌───────────────┐
+ │Feedback Agent │ ──► Grades answers & provides tutoring feedback
+ └───────────────┘
+         │
+         ▼
+[ Tutor Evaluation & Score ]
 ```
 
+### Flow Details:
 1. **Topic Agent**: Simulates an expert teacher, generating clean and structured explanations of complex concepts for beginners.
 2. **Quiz Agent**: Receives the Topic Agent's explanation and constructs 3 multiple-choice questions (MCQs) with options, keeping correct answers hidden.
 3. **Feedback Agent**: Receives the original material, the questions, and the user's input answers. It grades the answers, provides explanations for each correct/incorrect option, and calculates a final score (e.g., `2/3`).
